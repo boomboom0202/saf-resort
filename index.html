@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAF RESORT & SPA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/header/logo.png">
+  <style>
+    /* Стили для Header */
+    .navbar {
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0) !important;
+    }
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar.scrolled {
+      background: #fff !important;
+      transition: background 0.3s ease;
+    }
+
+    .category {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .category-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #0a510a;
+            padding-bottom: 10px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .category-title:hover {
+            color: #4f5b45;
+        }
+
+        .category-title::after {
+            content: '−';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #0a510a;
+            transition: all 0.3s ease;
+        }
+
+        .category.collapsed .category-title::after {
+            content: '';
+        }
+
+        .category-content {
+            transition: all 0.3s ease;
+        }
+
+        .category.collapsed .category-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 18px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #0a510a;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .service-price {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .procedure-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category.collapsed .procedure-image {
+            margin-bottom: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 15px;
+            }
+
+            .service-name, .service-price {
+                font-size: 1rem;
+            }
+        }
+    .navbar.scrolled .nav-link,
+    .navbar.scrolled .navbar-brand {
+      color: #000 !important;
+      transition: color 0.3s ease;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .navbar.scrolled .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .category {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #0a510a;;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 18px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #0a510a;;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .service-price {
+            color: #27ae60;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .procedure-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 15px;
+            }
+
+            .service-name, .service-price {
+                font-size: 1rem;
+            }
+        }
+    /* Стили для Hero секции */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes zoomBackground {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    .carousel-item {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .carousel-item {
+        height: 85vh;
+      }
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: zoomBackground 30s ease-in-out infinite;
+    }
+    .carousel-item::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .carousel-caption {
+      z-index: 2;
+      top: 55%;
+      transform: translateY(-50%);
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(90deg, #fff 15%, rgba(255,255,255,0) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: gradientAnimation 7s linear infinite;
+    }
+    .carousel-caption h1 {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+    .carousel-caption p {
+      font-size: 1.5rem;
+    }
+    .carousel-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .carousel-indicators {
+      display: flex;
+      gap: 10px;
+    }
+    .carousel-indicators button {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 5px;
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+      line-height: 33px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .carousel-indicators .active {
+      background: rgba(255, 255, 255, 0.9);
+      color: #fff;
+    }
+    .carousel-control-btn {
+      background: transparent;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .carousel-control-btn svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+    body {
+      background-color: #fff;
+      font-family: 'Arial', sans-serif;
+    }
+    /* СЕКЦИЯ БРОНИРОВАНИЯ */
+    .booking-section {
+      background-color: #4f5b45; /* Зелёный фон */
+      padding: 35px 0;
+      width: 100%;
+    }
+
+    .booking-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      color: white;
+      gap: 30px;
+    }
+
+    .booking-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .booking-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .booking-subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .booking-label {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .booking-input {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="date"], select {
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      cursor: pointer;
+    }
+
+    .booking-button {
+  background-color: white;
+  color: #4f5b45; /* Цвет текста по умолчанию */
+  padding: 12px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s; /* Добавим анимацию для изменения цвета текста */
+}
+
+.booking-button.scrolled {
+  background-color: white;
+  color: green; /* Зеленый цвет текста при прокрутке */
+}
+
+.booking-button:hover {
+  background-color: #e5e5e5;
+}
+
+
+    /* Адаптивность */
+    @media (max-width: 900px) {
+      .booking-container {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+    }
+    /* Секция "О Нас" */
+    .about-section {
+      background-color: #ffffff; /* Белый фон */
+      padding: 30px 0;
+      width: 100%;
+      color: #4f5b45; /* Зеленый акцент */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-2 { margin-bottom: 20px; }
+    .mb-4 { margin-bottom: 40px; }
+    .mt-3 { margin-top: 30px; }
+    .mt-5 { margin-top: 50px; }
+
+    .about-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #4f5b45;
+      margin-bottom: 20px;
+    }
+
+    .lead {
+      font-size: 16px;
+      color: #4f5b45;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    /* Статистика */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+    .container3{
+      background-color: #4f5b45;
+    }
+    .stat {
+      font-size: 36px;
+      font-weight: bold;
+      color: #4f5b45;
+    }
+
+    .stats p {
+      font-size: 16px;
+      color: #4f5b45;
+      opacity: 0.8;
+    }
+
+    /* Грид-верстка для контента "Наша Миссия" */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -10px;
+    }
+
+    .col {
+      padding: 10px;
+    }
+
+    .col-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    /* Стили для медиа-контента */
+    .media-wrapper {
+      position: relative;
+    }
+
+    .media-content {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    /* Оформление текста */
+    .about-text {
+      font-size: 16px;
+      color: #4f5b45;
+      opacity: 0.8;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Кнопка */
+    .btn {
+      background-color: #4f5b45;
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+
+      display: inline-block;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #3c473e;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .stats {
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats > div {
+        margin-bottom: 20px;
+      }
+      .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+#category{
+    max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+}
+    .room {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Высота секции равна высоте окна браузера */
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+  min-height: 300px;
+}
+.advantages-section {
+      background-color: #4f5b45;
+      padding: 40px 0;
+      color: white;
+    }
+
+    .advantages-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .advantages-title {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .advantages-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .advantage-item {
+      flex: 0 1 calc(33.333% - 20px);
+      min-width: 300px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .advantage-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .advantage-item:not(:nth-child(3n))::after {
+      content: "";
+      position: absolute;
+      top: 6%;
+      right: -15px;
+      height: 90%;
+      border-right: 3px dashed #fff;
+    }
+
+    .advantage-icon {
+      font-size: 50px;
+      margin-bottom: 25px;
+      color: #fff;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .advantage-item:hover .advantage-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .advantage-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .advantage-description {
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .additional-info {
+      font-size: 14px;
+      color: #c8d6c3;
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    @media (max-width: 1200px) {
+      .advantage-item {
+        flex: 0 1 calc(50% - 20px);
+      }
+      .advantage-item:not(:nth-child(3n))::after {
+        display: none;
+      }
+      .advantage-item:nth-child(2n)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .advantages-title {
+        font-size: 28px;
+      }
+      .advantage-item {
+        flex: 0 1 100%;
+        margin-bottom: 30px;
+      }
+      .advantage-title {
+        font-size: 22px;
+      }
+      .advantage-icon {
+        font-size: 45px;
+      }
+    }
+    .dashed-line2 {
+  border-top: 3px dashed #fff; /* Пунктирная линия */
+  margin: 20px 0; /* Отступы сверху и снизу */
+  }
+.dashed-line {
+  border-top: 3px dashed #4f5b45; /* Пунктирная линия */
+  margin: 20px 0; /* Отступы сверху и снизу */
+  }
+
+  .rooms-section {
+      background-color: #ffffff;
+      padding: 50px 0;
+      width: 100%;
+    }
+
+    .rooms-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+html {
+  scroll-behavior: smooth;
+}
+    .rooms-title {
+      font-size: 42px;
+      font-weight: 700;
+      color: #4f5b45;
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: 1.5px;
+      transition: font-size 0.3s ease;
+    }
+
+    .rooms-list {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .room-card {
+      background: #ffffff;
+      border: 2px solid #4f5b45;
+      border-radius: 8px;
+      flex: 1 1 calc(33.333% - 20px);
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .room-photo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    .room-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #4f5b45;
+      margin-bottom: 10px;
+    }
+
+    .room-description {
+      font-size: 14px;
+      color: #4f5b45;
+      opacity: 0.8;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .room-button {
+      background-color: #4f5b45;
+      color: #ffffff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .room-button:hover {
+      background-color: #3c473e;
+    }
+
+    /* Кнопки фильтров */
+    .room-buttons {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .room-selector-button {
+      background-color: #4f5b45;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1 1 auto;
+      min-width: 160px;
+    }
+
+    .room-selector-button:hover {
+      background-color: #3c473e;
+    }
+
+    /* Детали номеров */
+    .room-details {
+      text-align: left;
+      margin-bottom: 40px;
+      padding: 25px;
+      border: 1px solid #4f5b45;
+      border-radius: 8px;
+      background: #f8f8f8;
+    }
+
+    .room-details h2 {
+      color: #4f5b45;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .room-details p {
+      color: #4f5b45;
+      opacity: 0.9;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .room-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+ .room-collage img {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+    /* Адаптация для планшетов */
+    @media (max-width: 1024px) {
+      .rooms-title {
+        font-size: 36px;
+      }
+
+      .room-card {
+        padding: 15px;
+      }
+
+      .room-photo {
+        height: 180px;
+      }
+
+      .room-collage {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 768px) {
+      .rooms-section {
+        padding: 40px 0;
+      }
+
+      .rooms-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      .rooms-list {
+        gap: 15px;
+      }
+
+      .room-card {
+        flex: 1 1 calc(50% - 15px);
+      }
+
+      .room-buttons {
+        flex-direction: column;
+      }
+
+      .room-selector-button {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+      }
+
+      .room-details {
+        padding: 20px;
+      }
+    }
+
+    /* Адаптация для маленьких экранов */
+    @media (max-width: 480px) {
+      .rooms-section {
+        padding: 30px 0;
+      }
+
+      .rooms-title {
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+
+      .room-card {
+        flex: 1 1 100%;
+        margin-bottom: 15px;
+      }
+
+      .room-photo {
+        height: 220px;
+      }
+
+      .room-title {
+        font-size: 18px;
+      }
+
+      .room-description {
+        font-size: 13px;
+      }
+
+      .room-button {
+        padding: 14px 20px;
+        font-size: 15px;
+      }
+
+      .room-details {
+        padding: 15px;
+        margin-bottom: 30px;
+      }
+
+      .room-collage {
+        grid-template-columns: 1fr;
+      }
+
+      .room-collage img {
+        height: 200px;
+      }
+    }
+
+    /* Адаптация для очень маленьких экранов */
+    @media (max-width: 360px) {
+      .rooms-title {
+        font-size: 24px;
+      }
+
+      .room-photo {
+        height: 180px;
+      }
+
+      .room-collage img {
+        height: 160px;
+      }
+
+      .rooms-container {
+        padding: 0 15px;
+      }
+    }
+
+    /* Оптимизация тач-интерфейса */
+    @media (hover: none) {
+      .room-card:hover {
+        transform: none;
+      }
+
+      .room-button:active,
+      .room-selector-button:active {
+        transform: scale(0.98);
+      }
+    }
+    .booking-button.scrolled {
+  background-color: white;
+  color: green; /* Зеленый цвет текста при прокрутке */
+}
+    @media (max-width: 480px) {
+      .room-card {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+    .navbar.scrolled .btn-book {
+
+  color: #fff !important;
+
+}
+/* Секция процедур */
+.procedures-section {
+      background-color: #4f5b45;
+      color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      max-width: 1200px;
+      margin: 20px auto;
+
+    }
+    /* Коллаж изображений */
+    .collage2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-gap: 10px;
+      margin-bottom: 30px;
+    }
+    .collage2 img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    /* Категории процедур */
+    .category2 {
+      margin-bottom: 20px;
+    }
+    .category2 h2 {
+      font-size: 1.2rem;
+      border-bottom: 2px solid #7fa7a7;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .category2 h2:hover {
+      color: #000;
+    }
+    .procedures-list {
+      list-style: none;
+      padding-left: 20px;
+      line-height: 1.5;
+      display: none;
+      margin: 0;
+    }
+     /* Стили для коллажа */
+     .collage-section {
+      padding: 4rem 1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      color: #333;
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .collage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-rows: 300px;
+      grid-gap: 15px;
+      grid-auto-flow: dense;
+    }
+
+    .collage-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #1a1a1a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .collage-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+
+    .collage-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .collage-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Плавный градиент для затемнения нижней части */
+    .collage-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
+      z-index: 1;
+    }
+
+    /* Разные размеры для элементов */
+    .collage-item:nth-child(3n+1) {
+      grid-row: span 2;
+    }
+    .collage-item:nth-child(4n+4) {
+      grid-column: span 2;
+    }
+    .collage-item:nth-child(7n+7) {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+
+    @media (max-width: 1024px) {
+      .collage-grid {
+        grid-auto-rows: 250px;
+      }
+      .collage-item {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      .collage-grid {
+        grid-auto-rows: 200px;
+        grid-gap: 10px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Задержки анимации для последовательного появления */
+    .collage-item:nth-child(1)  { animation-delay: 0.1s; }
+    .collage-item:nth-child(2)  { animation-delay: 0.2s; }
+    .collage-item:nth-child(3)  { animation-delay: 0.3s; }
+    .collage-item:nth-child(4)  { animation-delay: 0.4s; }
+    .collage-item:nth-child(5)  { animation-delay: 0.5s; }
+    .collage-item:nth-child(6)  { animation-delay: 0.6s; }
+    .collage-item:nth-child(7)  { animation-delay: 0.7s; }
+    .collage-item:nth-child(8)  { animation-delay: 0.8s; }
+    .collage-item:nth-child(9)  { animation-delay: 0.9s; }
+    .collage-item:nth-child(10) { animation-delay: 1.0s; }
+    .collage-item:nth-child(11) { animation-delay: 1.1s; }
+    .collage-item:nth-child(12) { animation-delay: 1.2s; }
+    .collage-item:nth-child(13) { animation-delay: 1.3s; }
+    .collage-item:nth-child(14) { animation-delay: 1.4s; }
+    .collage-item:nth-child(15) { animation-delay: 1.5s; }
+
+    /* Стили для кнопок выбора галереи */
+    .gallery-buttons {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .gallery-buttons button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #4f5b45;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .gallery-buttons button:hover {
+      background-color: #3d4938;
+    }
+
+    /* Стили для контейнера кнопки скрытия */
+    .toggle-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+   .load-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  #loadMore {
+    background-color: #4f5b45;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  #loadMore:hover {
+    background-color: #63714f;
+    transform: translateY(-2px);
+  }
+
+  #loadMore:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+    .toggle-container button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #4f5b45;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-container button:hover {
+      background-color: #3d4938;
+    }
+    .category2.active .procedures-list {
+      display: block;
+    }
+    .procedures-list li {
+      padding: 4px 0;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    }
+    .procedures-list li:last-child {
+      border-bottom: none;
+    }
+    /* Адаптивность для мобильных устройств */
+    @media (max-width: 600px) {
+      .procedures-section {
+        padding: 20px;
+      }
+      .collage2 img {
+        height: 80px;
+      }
+      .category h2 {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <meta name="description" content="Санаторий SAF — современный комплекс для восстановления здоровья">
+  <link rel="preload" href="images/nav1.png" as="image">
+</head>
+<body>
+
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" data-aos="fade-down">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="" alt="Логотип" style="max-height: 60px;" data-aos="fade-left" data-aos-delay="500">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about" data-i18n="nav.about">О нас</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#advantages" data-i18n="nav.advantages">Наши ключевые преимущества</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#room" data-i18n="nav.rooms">Наши номера</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#procedures" data-i18n="nav.procedures">Процедурный кабинет</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery" data-i18n="nav.gallery">Фотогалерея</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="margin-bottom: -9px;" data-i18n="nav.phone1">+7 771 775 0550</a>
+          <a class="nav-link" data-i18n="nav.phone2">+7 771 775 0770</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="btn nav-link btn-book" href="#booking" data-i18n="nav.book">Забронировать</a>
+        </li>
+        <li class="nav-item dropdown ms-3">
+          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.language">
+            Язык
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item lang-option" data-lang="ru" href="#">Русский</a></li>
+            <li><a class="dropdown-item lang-option" data-lang="kz" href="#">Қазақша</a></li>
+            <li><a class="dropdown-item lang-option" data-lang="en" href="#">English</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero секция -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-controls">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="slide.1">1</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="slide.2">2</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="slide.3">3</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="slide.4">4</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="slide.5">5</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="slide.6">6</button>
+    </div>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/Интерьер/C91A0723.jpg" alt="Слайд 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 data-i18n="carousel.welcome.title">Добро пожаловать!</h1>
+        <p data-i18n="carousel.welcome.text">Погрузитесь в мир красоты и инноваций.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Интерьер/C91A0743.jpg" alt="Слайд 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 data-i18n="carousel.creativity.title">Креативность</h1>
+        <p data-i18n="carousel.creativity.text">Мы создаем уникальные решения для вашего бизнеса.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Интерьер/C91A0727.jpg" alt="Слайд 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 data-i18n="carousel.innovation.title">Инновации</h1>
+        <p data-i18n="carousel.innovation.text">Технологии и дизайн в гармонии.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Интерьер/C91A1042.jpg" alt="Слайд 4">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 data-i18n="carousel.modern.title">Модерн</h1>
+        <p data-i18n="carousel.modern.text">Современные решения для динамичного мира.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Интерьер/C91A0849.jpg" alt="Слайд 5">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 data-i18n="carousel.style.title">Стиль</h1>
+        <p data-i18n="carousel.style.text">Элегантность и индивидуальность в каждом кадре.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/Интерьер/C91A0748.jpg" alt="Слайд 6">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 data-i18n="carousel.dynamic.title">Динамика</h1>
+        <p data-i18n="carousel.dynamic.text">Пульс современности в каждом движении.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Кнопки навигации -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden" data-i18n="carousel.prev">Предыдущий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden" data-i18n="carousel.next">Следующий</span>
+  </button>
+</div>
+
+
+  <br>
+ <!-- БЛОК БРОНИРОВАНИЯ -->
+ <section class="booking-section" data-aos="fade-up">
+  <div class="booking-container">
+    <div class="booking-item">
+      <div class="booking-title" data-i18n="booking.title">Бронирование номеров</div>
+      <div class="booking-subtitle" data-i18n="booking.subtitle">Гарантированное заселение</div>
+    </div>
+
+    <div class="booking-item">
+      <span class="booking-label" data-i18n="booking.checkin">Заезд</span>
+      <input type="date" id="checkin" class="booking-input">
+    </div>
+
+    <div class="booking-item">
+      <span class="booking-label" data-i18n="booking.checkout">Выезд</span>
+      <input type="date" id="checkout" class="booking-input">
+    </div>
+
+    <div class="booking-item">
+      <span class="booking-label" data-i18n="booking.adults">Взрослые</span>
+      <select id="guests" class="booking-input">
+        <option value="1" data-i18n="booking.adults.1">1 взрослый</option>
+        <option value="2" selected data-i18n="booking.adults.2">2 взрослых</option>
+        <option value="3" data-i18n="booking.adults.3">3 взрослых</option>
+        <option value="4" data-i18n="booking.adults.4">4 взрослых</option>
+        <option value="5" data-i18n="booking.adults.5">5 взрослых</option>
+      </select>
+    </div>
+
+    <div class="booking-item">
+      <span class="booking-label" data-i18n="booking.children">Дети</span>
+      <select id="children" class="booking-input">
+        <option value="0" selected data-i18n="booking.children.0">Без детей</option>
+        <option value="1" data-i18n="booking.children.1">1 ребенок</option>
+        <option value="2" data-i18n="booking.children.2">2 ребенка</option>
+        <option value="3" data-i18n="booking.children.3">3 ребенка</option>
+        <option value="4" data-i18n="booking.children.4">4 ребенка</option>
+      </select>
+    </div>
+
+    <button class="booking-button" onclick="searchRoom()" data-i18n="booking.button">Забронировать</button>
+  </div>
+</section>
+
+
+  <section class="about-section" id="about">
+  <div class="container">
+    <div class="text-center mb-2">
+      <h2 class="about-title" style="font-size: 42px; letter-spacing: 1.5px;" data-aos="fade-right" data-i18n="about.title">О НАС</h2>
+      <p class="lead" data-aos="fade-left" data-i18n="about.description">
+        Санаторий "SAF" – место, где забота о вашем здоровье и отдых сочетаются с комфортом и природной гармонией.
+      </p>
+    </div>
+    <div class="stats">
+      <div class="text-center" data-aos="fade-down">
+        <div class="stat" id="visitors">0</div>
+        <p data-i18n="about.stats.visitors">Посетителей</p>
+      </div>
+      <div class="text-center">
+        <div class="stat" id="rooms">0</div>
+        <p data-i18n="about.stats.rooms">Номеров</p>
+      </div>
+      <div class="text-center">
+        <div class="stat" id="years">0</div>
+        <p data-i18n="about.stats.years">Лет работы</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col col-6">
+        <div class="media-wrapper" data-aos="fade-up">
+          <video class="media-content" muted loop preload="none" poster="images/Фасад/DSC00161.JPG">
+            <source src="images/video/санаторий.mp4" type="video/mp4">
+            <span data-i18n="about.video.unsupported">Ваш браузер не поддерживает видео.</span>
+          </video>
+        </div>
+      </div>
+      <div class="col col-6" style="display: flex; align-items: center;" data-aos="fade-right">
+        <div>
+          <h3 class="mb-4 mt-3" style="font-weight: 700;" data-i18n="about.mission.title">Наша Миссия</h3>
+          <p class="about-text" data-i18n="about.mission.text">
+            Мы стремимся создать уникальное пространство, где каждый гость сможет обрести гармонию с собой и природой. Наши программы направлены на полное восстановление организма, улучшение эмоционального состояния и повышение качества жизни.
+          </p>
+          <a href="#contact" class="btn mt-3" data-i18n="about.mission.contact">Связаться с нами</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dashed-line mb-4"></div>
+</section>
+
+<section class="advantages-section" id="advantages">
+  <div class="advantages-container">
+    <h2 class="advantages-title" style="font-size: 42px;" data-aos="fade-up" data-i18n="advantages.title">Наши основные преимущества</h2>
+    <div class="advantages-list">
+
+      <div class="advantage-item" data-aos="fade-right">
+        <i class="fa-solid fa-spa advantage-icon"></i>
+        <h3 class="advantage-title" data-i18n="advantages.health.title">Оздоровительные программы</h3>
+        <p class="advantage-description" data-i18n="advantages.health.description">
+          Комплекс процедур для общего укрепления организма: массажи, расслабляющие сеансы и щадящие очищающие методики. В работе используются проверенные средства и подходы.
+        </p>
+        <p class="additional-info" data-i18n="advantages.health.extra">Консультации с врачом-физиотерапевтом по графику</p>
+      </div>
+
+      <div class="advantage-item" data-aos="fade-down">
+        <i class="fa-solid fa-utensils advantage-icon"></i>
+        <h3 class="advantage-title" data-i18n="advantages.nutrition.title">Сбалансированное питание</h3>
+        <p class="advantage-description" data-i18n="advantages.nutrition.description">
+          Рацион составляется с учётом индивидуальных потребностей. В меню — блюда из свежих продуктов, часть из которых выращена на собственных участках.
+        </p>
+        <p class="additional-info" data-i18n="advantages.nutrition.extra">Диетические и постные блюда по запросу</p>
+      </div>
+
+      <div class="advantage-item" data-aos="fade-left">
+        <i class="fa-solid fa-bed advantage-icon"></i>
+        <h3 class="advantage-title" data-i18n="advantages.accommodation.title">Комфортное размещение</h3>
+        <p class="advantage-description" data-i18n="advantages.accommodation.description">
+          Уютные номера с современными удобствами: кондиционером, телевизором, Wi-Fi. Регулярная уборка и обслуживание включены.
+        </p>
+        <p class="additional-info" data-i18n="advantages.accommodation.extra">Предусмотрены семейные и одноместные номера</p>
+      </div>
+
+      <div class="advantage-item" data-aos="fade-left">
+        <i class="fa-solid fa-person-swimming advantage-icon"></i>
+        <h3 class="advantage-title" data-i18n="advantages.spa.title">Спа и бассейн</h3>
+        <p class="advantage-description" data-i18n="advantages.spa.description">
+          В распоряжении гостей — сауна, хаммам, бассейн с гидромассажем. Проводятся занятия по оздоровительной гимнастике в воде.
+        </p>
+        <p class="additional-info" data-i18n="advantages.spa.extra">Посещение возможно с 16 лет</p>
+      </div>
+
+      <div class="advantage-item" data-aos="fade-down">
+        <i class="fa-solid fa-concierge-bell advantage-icon"></i>
+        <h3 class="advantage-title" data-i18n="advantages.leisure.title">Организация досуга</h3>
+        <p class="advantage-description" data-i18n="advantages.leisure.description">
+          Помощь в планировании отдыха, бронирование экскурсий и трансферов. Администраторы готовы помочь в любое время суток.
+        </p>
+        <p class="additional-info" data-i18n="advantages.leisure.extra">Обслуживание доступно на нескольких языках</p>
+      </div>
+
+      <div class="advantage-item" data-aos="fade-right">
+        <i class="fa-solid fa-tree advantage-icon"></i>
+        <h3 class="advantage-title" data-i18n="advantages.nature.title">Близость к природе</h3>
+        <p class="advantage-description" data-i18n="advantages.nature.description">
+          Санаторий расположен в зелёной зоне с пешеходными маршрутами и зонами отдыха. Возможны прогулки на свежем воздухе и занятия йогой на открытых площадках.
+        </p>
+        <p class="additional-info" data-i18n="advantages.nature.extra">Проводятся экскурсии по окрестностям</p>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="dashed-line2"></div>
+</section>
+
+<section class="rooms-section" id="room">
+  <div class="rooms-container">
+    <h1 class="rooms-title" data-aos="fade-up" data-i18n="rooms.title">НАШИ НОМЕРА</h1>
+
+    <div class="room-buttons" data-aos="fade-down">
+      <button class="room-selector-button" onclick="showRoomDetails('standard')" data-i18n="rooms.buttons.standard">Стандарт</button>
+      <button class="room-selector-button" onclick="showRoomDetails('lux')" data-i18n="rooms.buttons.lux">Полулюкс</button>
+      <button class="room-selector-button" onclick="showRoomDetails('presidential')" data-i18n="rooms.buttons.presidential">Люкс</button>
+    </div>
+
+    <div id="room-details"></div>
+    <div class="dashed-line"></div>
+    <div class="rooms-list">
+      <div class="room-card" data-aos="fade-right">
+        <img src="images/Номера/C91A1068.jpg" alt="Стандарт" data-i18n="[alt]rooms.cards.standard.alt" class="room-photo">
+        <h2 class="room-title" data-i18n="rooms.cards.standard.title">Стандарт</h2>
+        <p class="room-description" data-i18n="rooms.cards.standard.description">
+          Уютный номер с базовыми удобствами для комфортного отдыха.
+        </p>
+      </div>
+
+      <div class="room-card" data-aos="fade-down">
+        <img src="images/Номера/C91A1081.jpg" alt="Полулюкс" data-i18n="[alt]rooms.cards.lux.alt" class="room-photo">
+        <h2 class="room-title" data-i18n="rooms.cards.lux.title">Полулюкс</h2>
+        <p class="room-description" data-i18n="rooms.cards.lux.description">
+          Просторный номер с улучшенными условиями и дополнительными удобствами.
+        </p>
+      </div>
+
+      <div class="room-card" data-aos="fade-left">
+        <img src="images/Номера/DSC00190.jpg" alt="Люкс" data-i18n="[alt]rooms.cards.presidential.alt" class="room-photo">
+        <h2 class="room-title" data-i18n="rooms.cards.presidential.title">Люкс</h2>
+        <p class="room-description" data-i18n="rooms.cards.presidential.description">
+          Эксклюзивный номер для тех, кто ценит роскошь и индивидуальный подход.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="dashed-line mb-5"></div>
+<br>
+  <div class="container3">
+  <br>
+
+<section class="procedures-section" id="procedures">
+  <h2 class="advantages-title" style="font-size: 42px; color: #fff;" data-aos="fade-up" data-i18n="procedures.title">ПРОЦЕДУРНЫЙ КАБИНЕТ</h2>
+
+  <!-- Коллаж фотографий -->
+  <div class="collage2" data-aos="fade-down" >
+    <img src="images/Процедурный/C91A0377.jpg" alt="Фото 1" >
+    <img src="images/Процедурный/C91A0408.jpg" alt="Фото 2" >
+    <img src="images/Процедурный/C91A0712.jpg" alt="Фото 3" >
+    <img src="images/Процедурный/C91A0697.jpg" alt="Фото 4" >
+    <img src="images/Процедурный/C91A0699.jpg" alt="Фото 5">
+  </div>
+
+  <!-- РУЧНОЙ МАССАЖ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.manual_massage.title">РУЧНОЙ МАССАЖ</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.manual_massage.vacuum_cups">Вакуумные банки – 1000 тенге</li>
+      <li data-i18n="category.manual_massage.classic_zone">Классический массаж одной зоны (швз, спина, руки) – 2500 тенге</li>
+      <li data-i18n="category.manual_massage.foot_massage">Массаж ног – 3000 тенге</li>
+      <li data-i18n="category.manual_massage.head_massage">Массаж головы – 3000 тенге</li>
+      <li data-i18n="category.manual_massage.face_massage">Массаж лица – 4000 тенге</li>
+      <li data-i18n="category.manual_massage.full_body">Общий классический массаж тела – 10 000 тенге</li>
+      <li data-i18n="category.manual_massage.child_zone">Классический детский массаж одной зоны – 2000 тенге</li>
+      <li data-i18n="category.manual_massage.full_child">Общий классический детский массаж – 6000 тенге</li>
+      <li data-i18n="category.manual_massage.point_back">Точечный массаж спины – 5000 тенге</li>
+      <li data-i18n="category.manual_massage.point_full">Общий точечный массаж тела – 12 000 тенге</li>
+      <li data-i18n="category.manual_massage.fire_zone">Огненный массаж (1 зона) – 3000 тенге</li>
+      <li data-i18n="category.manual_massage.honey_one">Медовый массаж одной зоны – 3500 тенге</li>
+      <li data-i18n="category.manual_massage.honey_full">Общий медовый массаж тела – 12 000 тенге</li>
+      <li data-i18n="category.manual_massage.visceral_hand">Висцеральный массаж внутренних органов руками – 7000 тенге</li>
+      <li data-i18n="category.manual_massage.visceral_foot">Висцеральный массаж внутренних органов ногами – 10 000 тенге/час</li>
+    </ul>
+  </div>
+
+  <!-- АППАРАТНЫЙ МАССАЖ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.hardware_massage.title">АППАРАТНЫЙ МАССАЖ</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.hardware_massage.bio_zone">Биоэнергетический массаж одной зоны – 4000 тенге</li>
+      <li data-i18n="category.hardware_massage.bio_face">Биоэнергетический массаж лица (лифтинг) – 4000 тенге</li>
+      <li data-i18n="category.hardware_massage.bio_full">Биоэнергетический массаж всего тела – 10 000 тенге</li>
+      <li data-i18n="category.hardware_massage.lympht">Лимфодренажный массаж (прессотерапия) – 2000 тенге</li>
+      <li data-i18n="category.hardware_massage.seragem">Массажная кровать Seragem – 2000 тенге</li>
+      <li data-i18n="category.hardware_massage.shoulder_foot">Массажер плечевой, ножной – по 1000 тенге</li>
+      <li data-i18n="category.hardware_massage.glisson">Петля Глиссона, механическая кровать – по 1000 тенге</li>
+      <li data-i18n="category.hardware_massage.salt_mine">Солевая шахта – 1000 тенге</li>
+      <li data-i18n="category.hardware_massage.darsonval">Дарсонваль для головы, лица – 1000 тенге</li>
+    </ul>
+  </div>
+
+  <!-- КОСМЕТОЛОГИЯ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.cosmetology.title">КОСМЕТОЛОГИЯ</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.cosmetology.face_massage">Массаж лица – 4000 тенге</li>
+      <li data-i18n="category.cosmetology.peeling">Пилинг – 8000 тенге</li>
+      <li data-i18n="category.cosmetology.hardware_clean">Аппаратная чистка лица – 8000 тенге</li>
+      <li data-i18n="category.cosmetology.facial_care">Уход за лицом (чистка, массаж, маска) – 10 000 тенге</li>
+      <li data-i18n="category.cosmetology.hair_care">Уход за волосами – 10 000 тенге</li>
+      <li data-i18n="category.cosmetology.scalp_peel">Пилинг волосистой части головы – 4000 тенге</li>
+      <li data-i18n="category.cosmetology.plasma_scalp">Плазмотерапия волосистой части головы – 8000 тенге</li>
+      <li data-i18n="category.cosmetology.plasma_arms">Плазмотерапия рук – 8000 тенге</li>
+      <li data-i18n="category.cosmetology.plasma_neck">Плазмотерапия шеи и зоны декольте – 10 000 тенге</li>
+      <li data-i18n="category.cosmetology.plasma_face">Плазмотерапия лица – 10 000 тенге</li>
+      <li data-i18n="category.cosmetology.mesotherapy">Мезотерапия лица – 12 000 тенге</li>
+      <li data-i18n="category.cosmetology.mesoplasma">Мезоплазма лица – 12 000 тенге</li>
+      <li data-i18n="category.cosmetology.biorevitalization">Биоревитализация – 12 000 тенге</li>
+    </ul>
+  </div>
+
+  <!-- ВОДНЫЕ И ТЕПЛОВЫЕ ПРОЦЕДУРЫ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.water_thermal.title">ВОДНЫЕ И ТЕПЛОВЫЕ ПРОЦЕДУРЫ</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.water_thermal.barrel">Фитобочка, Ба-гуа – 2000 тенге</li>
+      <li data-i18n="category.water_thermal.salt_bath">Ванна с разными солями – 3000 тенге</li>
+      <li data-i18n="category.water_thermal.paraffin_zone">Парафин/озекерит (1 зона) – 2000 тенге</li>
+      <li data-i18n="category.water_thermal.paraffin_face_hand">Парафин косметический для лица и рук – 2000 тенге</li>
+      <li data-i18n="category.water_thermal.bath_salts">Соли для ванны (скипидар, магниевая соль, морская соль, детокс) – 1000 тенге</li>
+    </ul>
+  </div>
+
+  <!-- ОЧИЩЕНИЕ ОРГАНИЗМА -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.detox.title">ОЧИЩЕНИЕ ОРГАНИЗМА</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.detox.tyubazh">Тюбаж (печень) – 1500 тенге</li>
+      <li data-i18n="category.detox.duodenal">Дуоденальное зондирование – 12 000 тенге</li>
+      <li data-i18n="category.detox.enema_clean">Клизма очистительная – 2000 тенге</li>
+      <li data-i18n="category.detox.enema_alkaline">Клизма щелочная – 3000 тенге</li>
+      <li data-i18n="category.detox.intestinal_detox">Детокс (очищение) кишечника – 10 000 тенге</li>
+    </ul>
+  </div>
+
+  <!-- ПРОЦЕДУРНЫЙ КАБИНЕТ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.procedures_office.title">ПРОЦЕДУРНЫЙ КАБИНЕТ</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.procedures_office.iv_drip">Внутривенное вливание – 700 тенге</li>
+      <li data-i18n="category.procedures_office.iv_injection">Внутривенная инъекция (струйно) – 500 тенге</li>
+      <li data-i18n="category.procedures_office.im_injection">Внутримышечная инъекция – 300 тенге</li>
+    </ul>
+  </div>
+
+  <!-- КАПЕЛЬНИЦЫ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.infusions.title">КАПЕЛЬНИЦЫ</h2>
+    <ul class="procedures-list">
+      <p data-i18n="category.infusions.note">(подбирается индивидуально, около 10 000–15 000 тенге в сутки):</p>
+      <li data-i18n="category.infusions.detox">Детокс (золушка)</li>
+      <li data-i18n="category.infusions.strong_vessels">Крепкие сосуды, ясный ум, кардиовектор, мегаполис</li>
+    </ul>
+  </div>
+
+  <!-- КОРРЕКЦИЯ ПОЗВОНКА -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.spine_correction.title">КОРРЕКЦИЯ ПОЗВОНКА</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.spine_correction.atlas">Коррекция атланты (1-го шейного позвоночника) – 50 000 тенге</li>
+    </ul>
+  </div>
+
+  <!-- ДИАГНОСТИКА -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.diagnostics.title">ДИАГНОСТИКА</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.diagnostics.endocrinologist">Консультация эндокринолога – 10 000 тенге</li>
+      <li data-i18n="category.diagnostics.blood_sugar">Измерение сахара в крови глюкометром – 600 тенге</li>
+      <li data-i18n="category.diagnostics.checkup">Чекап (аппаратная диагностика, выявление инфекции) – 10 000 тенге</li>
+      <li data-i18n="category.diagnostics.bioresonance">Биорезонансное тестирование – 6000 тенге</li>
+      <li data-i18n="category.diagnostics.lab_tests">Лабораторные исследования (анализы) в лаборатории Invitro</li>
+    </ul>
+  </div>
+
+  <!-- ЛЕЧЕНИЕ ВРАЧА ВОСТОЧНОЙ МЕДИЦИНЫ -->
+  <div class="category2" data-aos="fade-down">
+    <h2 onclick="toggleCategory(this)" data-i18n="category.eastern_medicine.title">ЛЕЧЕНИЕ ВРАЧА ВОСТОЧНОЙ МЕДИЦИНЫ</h2>
+    <ul class="procedures-list">
+      <li data-i18n="category.eastern_medicine.pulse_diagnosis">Диагностика по пульсу (проводит врач из Китая) – 5000 тенге</li>
+      <li data-i18n="category.eastern_medicine.hirudotherapy">Гирудотерапия – 3000 тенге за штуку</li>
+      <li data-i18n="category.eastern_medicine.acupuncture">Иглотерапия – 5000 тенге в день</li>
+      <li data-i18n="category.eastern_medicine.hijama">Хиджама – 5000 тенге</li>
+      <li data-i18n="category.eastern_medicine.bioenergy">Биоэнергетический массаж – 8000 тенге (40 минут)</li>
+      <li data-i18n="category.eastern_medicine.foot_massage">Массаж ногами – 10 000 тенге в час</li>
+      <li data-i18n="category.eastern_medicine.point_massage">Точечный массаж – 15 000 тенге (40 минут)</li>
+      <li data-i18n="category.eastern_medicine.organ_lift">Поднятие внутренних органов – 20 000 тенге</li>
+    </ul>
+  </div>
+</section>
+
+  <div class="dashed-line2 mb-5"></div>
+  <br>
+</div>
+
+<section class="collage-section" id="gallery">
+    <h2 class="section-title" style="font-weight: 700; font-size: 42px;" data-aos="fade-up" data-i18n="gallery.title">ФОТОГАЛЕРЕЯ</h2>
+    <div class="gallery-buttons" data-aos="fade-down">
+      <button data-gallery="Интерьер" data-i18n="gallery.buttons.interior">Интерьер</button>
+      <button data-gallery="Фасад" data-i18n="gallery.buttons.facade">Фасад</button>
+      <button data-gallery="Персонал" data-i18n="gallery.buttons.staff">Персонал</button>
+      <button data-gallery="SPA" data-i18n="gallery.buttons.spa">SPA</button>
+      <button data-gallery="Номера" data-i18n="gallery.buttons.rooms">Номера</button>
+      <button data-gallery="Процедурный" data-i18n="gallery.buttons.procedures">Процедурный</button>
+    </div>
+    <div class="toggle-container" data-aos="fade-right">
+      <button id="toggleGallery" data-i18n="gallery.toggle.hide">Скрыть фотографии</button>
+    </div>
+    <div class="collage-grid" id="collageGrid">
+
+    </div>
+    <div class="load-more-container" data-aos="fade-down">
+      <button id="loadMore" style="display: none;" data-i18n="gallery.load_more">Загрузить ещё</button>
+    </div>
+</section>
+<div class="dashed-line mb-5"></div>
+<br>
+
+
+<footer class="footer-section" style="background-color: #4f5b45; color: white; padding: 60px 0 30px;" >
+  <div class="container">
+      <div class="row">
+          <!-- Колонка с контактами -->
+          <div class="col-md-4 mb-4" data-aos="fade-down">
+              <h5 style="font-size: 20px; margin-bottom: 20px; border-bottom: 2px solid white; padding-bottom: 10px; display: inline-block;" data-i18n="footer.contacts.title">Контакты</h5>
+              <ul class="list-unstyled">
+                  <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i><span data-i18n="footer.contacts.address">093 уч. кв. Село Рыскулово, Талгарский район</span></li>
+                  <li class="mb-2"><i class="fas fa-phone me-2"></i><span data-i18n="footer.contacts.phone1">+7 771 775 0550</span></li>
+                  <li class="mb-2"><i class="fas fa-phone me-2"></i><span data-i18n="footer.contacts.phone2">+7 771 775 0770</span></li>
+                  <li class="mb-2"><i class="fas fa-envelope me-2"></i><span data-i18n="footer.contacts.email">info@saf-sanatorium.ru</span></li>
+                  <li class="mt-4">
+                      <a href="#" class="text-white me-3" aria-label="Instagram" data-i18n-alt="footer.contacts.instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                      <a href="#" class="text-white" aria-label="WhatsApp" data-i18n-alt="footer.contacts.whatsapp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                  </li>
+              </ul>
+          </div>
+
+          <!-- Колонка с быстрыми ссылками -->
+          <div class="col-md-4 mb-4" data-aos="fade-up">
+              <h5 style="font-size: 20px; margin-bottom: 20px; border-bottom: 2px solid white; padding-bottom: 10px; display: inline-block;" data-i18n="footer.quick_links.title">Быстрые ссылки</h5>
+              <ul class="list-unstyled">
+                  <li class="mb-2"><a href="#" class="text-white text-decoration-none" data-i18n="footer.quick_links.home">Главная</a></li>
+                  <li class="mb-2"><a href="#about" class="text-white text-decoration-none" data-i18n="footer.quick_links.about">О нас</a></li>
+                  <li class="mb-2"><a href="#services" class="text-white text-decoration-none" data-i18n="footer.quick_links.services">Услуги</a></li>
+                  <li class="mb-2"><a href="#rooms" class="text-white text-decoration-none" data-i18n="footer.quick_links.rooms">Номера</a></li>
+                  <li class="mb-2"><a href="#booking" class="text-white text-decoration-none" data-i18n="footer.quick_links.booking">Бронирование</a></li>
+                  <li class="mb-2"><a href="#contact" class="text-white text-decoration-none" data-i18n="footer.quick_links.contact">Контакты</a></li>
+              </ul>
+          </div>
+
+          <!-- Колонка с подпиской -->
+          <div class="col-md-4 mb-4" data-aos="fade-left">
+              <h5 style="font-size: 20px; margin-bottom: 20px; border-bottom: 2px solid white; padding-bottom: 10px; display: inline-block;" data-i18n="footer.feedback.title">Обратная связь</h5>
+              <p data-i18n="footer.feedback.text">Есть вопросы или предложения? Напишите нам!</p>
+              <form id="feedback-form" class="mt-3">
+                <div class="mb-3">
+                  <input type="text" id="userName" class="form-control" placeholder="Ваше имя" data-i18n-placeholder="footer.feedback.placeholder.name" required>
+                </div>
+                <div class="mb-3">
+                  <input type="email" id="userEmail" class="form-control" placeholder="Ваш email" data-i18n-placeholder="footer.feedback.placeholder.email" required>
+                </div>
+                <div class="mb-3">
+                  <textarea id="userMessage" class="form-control" placeholder="Ваше сообщение" data-i18n-placeholder="footer.feedback.placeholder.message" rows="3" required></textarea>
+                </div>
+                <button class="btn btn-light" type="submit" data-i18n="footer.feedback.button">Отправить</button>
+              </form>
+          </div>
+      </div>
+<div class="row mt-4" data-aos="fade-right">
+          <div class="col-12">
+              <div class="map-container" style="width: 100%; height: 300px; border: 0; border-radius: 8px; overflow: hidden;">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11614.382619490782!2d77.27296107540195!3d43.30178873793285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38839c0654000c79%3A0xa5b1073c9aa3e02e!2sRyskulov!5e0!3m2!1sen!2skz!4v1747911162356!5m2!1sen!2skz"
+                          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+          </div>
+      </div>
+      <!-- Нижняя часть футера -->
+      <div class="row mt-5 pt-3" style="border-top: 1px solid rgba(255,255,255,0.1);" data-aos="fade-up">
+          <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0" data-i18n="footer.copy">© 2025 Санаторий "SAF". Все права защищены.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+              <a href="#" class="text-white text-decoration-none me-3" data-i18n="footer.policy">Политика конфиденциальности</a>
+              <a href="#" class="text-white text-decoration-none" data-i18n="footer.terms">Условия использования</a>
+          </div>
+      </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.getElementById("mainNav");
+      const logo = document.querySelector("#mainNav .navbar-brand img");
+      const heroSection = document.getElementById("heroCarousel");
+      let heroHeight = heroSection.offsetHeight;
+
+      function toggleNavbarStyle() {
+        if (window.scrollY > heroHeight * 0.2) {
+          navbar.classList.add("scrolled");
+          logo.src = "images/nav2.png";
+        } else {
+          navbar.classList.remove("scrolled");
+          logo.src = "images/nav1.png";
+        }
+      }
+
+      window.addEventListener("scroll", () => {
+        window.requestAnimationFrame(toggleNavbarStyle);
+      });
+
+      window.addEventListener("resize", () => {
+        heroHeight = heroSection.offsetHeight;
+      });
+
+      toggleNavbarStyle();
+    });
+  </script>
+  <script>
+    document.getElementById("subscribe-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var email = document.getElementById("email-input").value;
+
+        if (!email) {
+            alert("Введите корректный email");
+            return;
+        }
+
+        // Замените на вашу Google Forms URL
+        var googleFormUrl = "https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_URL/formResponse";
+
+        // Замените entry.YOUR_ENTRY_ID на реальный ID поля для email
+        var formData = new FormData();
+        formData.append("entry.YOUR_ENTRY_ID", email);
+
+        // Отправка данных в Google Forms
+        fetch(googleFormUrl, {
+            method: "POST",
+            body: formData,
+            mode: "no-cors"
+        }).then(() => {
+            document.getElementById("subscribe-message").style.display = "block";
+            document.getElementById("email-input").value = ""; // Очистка поля
+        }).catch(error => {
+            alert("Ошибка при подписке, попробуйте позже.");
+        });
+    });
+    </script>
+  <script>
+    const carouselElement = document.querySelector('#heroCarousel');
+    const carousel = new bootstrap.Carousel(carouselElement);
+  </script>
+
+
+<script>
+    /*
+      В связи с ограничениями браузера, список изображений приходится задавать вручную.
+      Если файлы добавляются/удаляются, необходимо обновить эти массивы.
+    */
+    const galleries = {
+      "Интерьер": [
+        "C91A0723.jpg",
+        "C91A0725.jpg",
+        "C91A0726.jpg",
+        "C91A0727.jpg",
+        "C91A0729.jpg",
+        "C91A0730.jpg",
+        "C91A0734.jpg",
+        "C91A0736.jpg",
+        "C91A0737.jpg",
+        "C91A0738.jpg",
+        "C91A0740.jpg",
+        "C91A0743.jpg",
+        "C91A0744.jpg",
+        "C91A0748.jpg",
+        "C91A0749.jpg",
+        "C91A0750.jpg",
+        "C91A0751.jpg",
+        "C91A0752.jpg",
+        "C91A0753.jpg",
+        "C91A0754.jpg",
+        "C91A0840.jpg",
+        "C91A0842.jpg",
+        "C91A0849.jpg",
+        "C91A0850.jpg",
+        "C91A0851.jpg",
+        "C91A1034.jpg",
+        "C91A1035.jpg",
+        "C91A1036.jpg",
+        "C91A1038.jpg",
+        "C91A1040.jpg",
+        "C91A1041.jpg",
+        "C91A1042.jpg",
+        "C91A1043.jpg",
+        "C91A1044.jpg"
+      ],
+      "Процедурный": [
+    "C91A0376.jpg",
+    "C91A0377.jpg",
+    "C91A0380.jpg",
+    "C91A0381.jpg",
+    "C91A0382.jpg",
+    "C91A0383.jpg",
+    "C91A0384.jpg",
+    "C91A0385.jpg",
+    "C91A0386.jpg",
+    "C91A0390.jpg",
+    "C91A0391.jpg",
+    "C91A0392.jpg",
+    "C91A0393.jpg",
+    "C91A0398.jpg",
+    "C91A0399.jpg",
+    "C91A0400.jpg",
+    "C91A0401.jpg",
+    "C91A0402.jpg",
+    "C91A0403.jpg",
+    "C91A0404.jpg",
+    "C91A0406.jpg",
+    "C91A0408.jpg",
+    "C91A0409.jpg",
+    "C91A0413.jpg",
+    "C91A0415.jpg",
+    "C91A0416.jpg",
+    "C91A0418.jpg",
+    "C91A0419.jpg",
+    "C91A0420.jpg",
+    "C91A0421.jpg",
+    "C91A0422.jpg",
+    "C91A0424.jpg",
+    "C91A0425.jpg",
+    "C91A0427.jpg",
+    "C91A0428.jpg",
+    "C91A0429.jpg",
+    "C91A0430.jpg",
+    "C91A0431.jpg",
+    "C91A0433.jpg",
+    "C91A0434.jpg",
+    "C91A0435.jpg",
+    "C91A0437.jpg",
+    "C91A0438.jpg",
+    "C91A0439.jpg",
+    "C91A0440.jpg",
+    "C91A0441.jpg",
+    "C91A0442.jpg",
+    "C91A0443.jpg",
+    "C91A0444.jpg",
+    "C91A0445.jpg",
+    "C91A0447.jpg",
+    "C91A0448.jpg",
+    "C91A0450.jpg",
+    "C91A0452.jpg",
+    "C91A0454.jpg",
+    "C91A0455.jpg",
+    "C91A0457.jpg",
+    "C91A0458.jpg",
+    "C91A0460.jpg",
+    "C91A0461.jpg",
+    "C91A0463.jpg",
+    "C91A0464.jpg",
+    "C91A0465.jpg",
+    "C91A0466.jpg",
+    "C91A0467.jpg",
+    "C91A0468.jpg",
+    "C91A0469.jpg",
+    "C91A0472.jpg",
+    "C91A0473.jpg",
+    "C91A0474.jpg",
+    "C91A0477.jpg",
+    "C91A0478.jpg",
+    "C91A0479.jpg",
+    "C91A0480.jpg",
+    "C91A0481.jpg",
+    "C91A0483.jpg",
+    "C91A0484.jpg",
+    "C91A0487.jpg",
+    "C91A0488.jpg",
+    "C91A0490.jpg",
+    "C91A0491.jpg",
+    "C91A0493.jpg",
+    "C91A0497.jpg",
+    "C91A0502.jpg",
+    "C91A0504.jpg",
+    "C91A0506.jpg",
+    "C91A0507.jpg",
+    "C91A0508.jpg",
+    "C91A0511.jpg",
+    "C91A0512.jpg",
+    "C91A0513.jpg",
+    "C91A0515.jpg",
+    "C91A0516.jpg",
+    "C91A0517.jpg",
+    "C91A0518.jpg",
+    "C91A0519.jpg",
+    "C91A0522.jpg",
+    "C91A0523.jpg",
+    "C91A0524.jpg",
+    "C91A0525.jpg",
+    "C91A0527.jpg",
+    "C91A0529.jpg",
+    "C91A0533.jpg",
+    "C91A0538.jpg",
+    "C91A0540.jpg",
+    "C91A0541.jpg",
+    "C91A0542.jpg",
+    "C91A0545.jpg",
+    "C91A0546.jpg",
+    "C91A0548.jpg",
+    "C91A0549.jpg",
+    "C91A0553.jpg",
+    "C91A0554.jpg",
+    "C91A0555.jpg",
+    "C91A0559.jpg",
+    "C91A0560.jpg",
+    "C91A0562.jpg",
+    "C91A0563.jpg",
+    "C91A0564.jpg",
+    "C91A0565.jpg",
+    "C91A0566.jpg",
+    "C91A0567.jpg",
+    "C91A0571.jpg",
+    "C91A0572.jpg",
+    "C91A0573.jpg",
+    "C91A0578.jpg",
+    "C91A0579.jpg",
+    "C91A0582.jpg",
+    "C91A0583.jpg",
+    "C91A0587.jpg",
+    "C91A0588.jpg",
+    "C91A0589.jpg",
+    "C91A0595.jpg",
+    "C91A0597.jpg",
+    "C91A0599.jpg",
+    "C91A0601.jpg",
+    "C91A0602.jpg",
+    "C91A0603.jpg",
+    "C91A0604.jpg",
+    "C91A0606.jpg",
+    "C91A0607.jpg",
+    "C91A0609.jpg",
+    "C91A0611.jpg",
+    "C91A0612.jpg",
+    "C91A0614.jpg",
+    "C91A0615.jpg",
+    "C91A0616.jpg",
+    "C91A0617.jpg",
+    "C91A0618.jpg",
+    "C91A0619.jpg",
+    "C91A0620.jpg",
+    "C91A0621.jpg",
+    "C91A0622.jpg",
+    "C91A0623.jpg",
+    "C91A0624.jpg",
+    "C91A0628.jpg",
+    "C91A0632.jpg",
+    "C91A0636.jpg",
+    "C91A0640.jpg",
+    "C91A0641.jpg",
+    "C91A0643.jpg",
+    "C91A0644.jpg",
+    "C91A0646.jpg",
+    "C91A0649.jpg",
+    "C91A0651.jpg",
+    "C91A0654.jpg",
+    "C91A0655.jpg",
+    "C91A0663.jpg",
+    "C91A0664.jpg",
+    "C91A0670.jpg",
+    "C91A0675.jpg",
+    "C91A0676.jpg",
+    "C91A0677.jpg",
+    "C91A0678.jpg",
+    "C91A0679.jpg",
+    "C91A0681.jpg",
+    "C91A0682.jpg",
+    "C91A0683.jpg",
+    "C91A0684.jpg",
+    "C91A0685.jpg",
+    "C91A0686.jpg",
+    "C91A0687.jpg",
+    "C91A0690.jpg",
+    "C91A0691.jpg",
+    "C91A0692.jpg",
+    "C91A0693.jpg",
+    "C91A0694.jpg",
+    "C91A0695.jpg",
+    "C91A0696.jpg",
+    "C91A0697.jpg",
+    "C91A0698.jpg",
+    "C91A0699.jpg",
+    "C91A0700.jpg",
+    "C91A0701.jpg",
+    "C91A0702.jpg",
+    "C91A0704.jpg",
+    "C91A0706.jpg",
+    "C91A0707.jpg",
+    "C91A0709.jpg",
+    "C91A0710.jpg",
+    "C91A0711.jpg",
+    "C91A0712.jpg",
+    "C91A0713.jpg",
+    "C91A0714.jpg",
+    "C91A0716.jpg",
+    "C91A0718.jpg",
+    "C91A0719.jpg",
+    "C91A0720.jpg",
+],
+      "Фасад": [
+        "C91A1014.JPG",
+        "C91A1015.JPG",
+        "C91A1016.JPG",
+        "C91A1017.JPG",
+        "C91A1018.JPG",
+        "C91A1019.JPG",
+        "C91A1022.JPG",
+        "C91A1023.JPG",
+        "C91A1025.JPG",
+        "C91A1026.JPG",
+        "C91A1027.JPG",
+        "C91A1028.JPG",
+        "C91A1029.JPG",
+        "C91A1030.JPG",
+        "C91A1031.JPG",
+        "C91A1032.JPG",
+        "C91A1033.JPG",
+        "DSC00160.JPG",
+        "DSC00161.JPG",
+        "DSC00163.JPG",
+        "DSC00165.JPG",
+        "DSC00172.JPG",
+        "DSC00177.JPG",
+        "DSC00178.JPG",
+        "DSC00181.JPG"
+      ],
+      "Персонал": [
+        "C91A0758.jpg",
+        "C91A0760.jpg",
+        "C91A0762.jpg",
+        "C91A0764.jpg",
+        "C91A0765.jpg",
+        "C91A0767.jpg",
+        "C91A0768.jpg",
+        "C91A0769.jpg",
+        "C91A0772.jpg",
+        "C91A0778.jpg",
+        "C91A0781.jpg",
+        "C91A0782.jpg",
+        "C91A0784.jpg",
+        "C91A0785.jpg",
+        "C91A0788.jpg",
+        "C91A0789.jpg",
+        "C91A0790.jpg",
+        "C91A0792.jpg",
+        "C91A0794.jpg",
+        "C91A0796.jpg",
+        "C91A0798.jpg",
+        "C91A0799.jpg",
+        "C91A0800.jpg",
+        "C91A0804.jpg",
+        "C91A0806.jpg",
+        "C91A0807.jpg",
+        "C91A0813.jpg",
+        "C91A0814.jpg",
+        "C91A0815.jpg",
+        "C91A0816.jpg",
+        "C91A0817.jpg",
+        "C91A0818.jpg",
+        "C91A0819.jpg",
+        "C91A0820.jpg",
+        "C91A0822.jpg",
+        "C91A0825.jpg",
+        "C91A0826.jpg",
+        "C91A0827.jpg",
+        "C91A0828.jpg",
+        "C91A0829.jpg",
+        "C91A0830.jpg",
+        "C91A0831.jpg",
+        "C91A0832.jpg",
+        "C91A0833.jpg",
+        "C91A0835.jpg",
+        "C91A0837.jpg",
+        "C91A0839.jpg",
+        "C91A0845.jpg",
+        "C91A0846.jpg",
+        "C91A0847.jpg",
+        "C91A0848.jpg",
+        "C91A0854.jpg",
+        "C91A0857.jpg",
+        "C91A0858.jpg",
+        "C91A0859.jpg",
+        "C91A0861.jpg",
+        "C91A0863.jpg",
+        "C91A0865.jpg",
+        "C91A0868.jpg",
+        "C91A0869.jpg",
+        "C91A0871.jpg",
+        "C91A0873.jpg",
+        "C91A0874.jpg",
+        "C91A0876.jpg",
+        "C91A0878.jpg",
+        "C91A0884.jpg",
+        "C91A0885.jpg",
+        "C91A0887.jpg",
+        "C91A0889.jpg",
+        "C91A0891.jpg",
+        "C91A0895.jpg",
+        "C91A0897.jpg",
+        "C91A0898.jpg",
+        "C91A0901.jpg",
+        "C91A0904.jpg",
+        "C91A0906.jpg",
+        "C91A0910.jpg",
+        "C91A0912.jpg",
+        "C91A0914.jpg",
+        "C91A0915.jpg",
+        "C91A0920.jpg",
+        "C91A1050.jpg",
+        "C91A1052.jpg",
+        "C91A1054.jpg",
+        "C91A1084.jpg",
+        "C91A1085.jpg",
+        "C91A1088.jpg",
+        "C91A1090.jpg",
+        "C91A1091.jpg",
+        "C91A1093.jpg",
+        "DSC00145.JPG",
+        "DSC00146.JPG",
+        "DSC00147.JPG",
+        "DSC00148.JPG",
+        "DSC00149.JPG",
+        "DSC00150.JPG",
+        "DSC00151.JPG",
+        "DSC00152.JPG",
+        "DSC00153.JPG",
+        "DSC00157.JPG"
+      ],
+      "SPA": [
+        "C91A0922.jpg",
+        "C91A0923.jpg",
+        "C91A0927.jpg",
+        "C91A0930.jpg",
+        "C91A0931.jpg",
+        "C91A0932.jpg",
+        "C91A0933.jpg",
+        "C91A0934.jpg",
+        "C91A0935.jpg",
+        "C91A0936.jpg",
+        "C91A0940.jpg",
+        "C91A0941.jpg",
+        "C91A0942.jpg",
+        "C91A0943.jpg",
+        "C91A0944.jpg",
+        "C91A0945.jpg",
+        "C91A0946.jpg",
+        "C91A0947.jpg",
+        "C91A0948.jpg",
+        "C91A0949.jpg",
+        "C91A0950.jpg",
+        "C91A0951.jpg",
+        "C91A0952.jpg",
+        "C91A0953.jpg",
+        "C91A0954.jpg",
+        "C91A0955.jpg",
+        "C91A0956.jpg",
+        "C91A0957.jpg",
+        "C91A0958.jpg",
+        "C91A0959.jpg",
+        "C91A0960.jpg",
+        "C91A0961.jpg",
+        "C91A0962.jpg",
+        "C91A0963.jpg",
+        "C91A0965.jpg",
+        "C91A0967.jpg",
+        "C91A0969.jpg",
+        "C91A0970.jpg",
+        "C91A0971.jpg",
+        "C91A0972.jpg",
+        "C91A0973.jpg",
+        "C91A0974.jpg",
+        "C91A0975.jpg",
+        "C91A0976.jpg",
+        "C91A0977.jpg",
+        "C91A0978.jpg",
+        "C91A0979.jpg",
+        "C91A0981.jpg",
+        "C91A0982.jpg",
+        "C91A0983.jpg",
+        "C91A0984.jpg",
+        "C91A0985.jpg",
+        "C91A0986.jpg",
+        "C91A0987.jpg",
+        "C91A0988.jpg",
+        "C91A0989.jpg",
+        "C91A0990.jpg",
+        "C91A0991.jpg",
+        "C91A0992.jpg",
+        "C91A0993.jpg",
+        "C91A0994.jpg",
+        "C91A0995.jpg",
+        "C91A0997.jpg",
+        "C91A0998.jpg",
+        "C91A0999.jpg",
+        "C91A1000.jpg",
+        "C91A1001.jpg",
+        "C91A1002.jpg",
+        "C91A1003.jpg",
+        "C91A1004.jpg",
+        "C91A1006.jpg",
+        "C91A1007.jpg",
+        "C91A1009.jpg",
+        "C91A1010.jpg",
+        "C91A1011.jpg",
+        "C91A1012.jpg"
+      ],
+      "Номера": [
+        "C91A1059.jpg",
+        "C91A1060.jpg",
+        "C91A1062.jpg",
+        "C91A1068.jpg",
+        "C91A1069.jpg",
+        "C91A1071.jpg",
+        "C91A1073.jpg",
+        "C91A1081.jpg",
+        "C91A1082.jpg",
+        "C91A1083.jpg",
+        "DSC00183.jpg",
+        "DSC00184.jpg",
+        "DSC00186.jpg",
+        "DSC00187.jpg",
+        "DSC00188.jpg",
+        "DSC00189.jpg",
+        "DSC00190.jpg",
+        "DSC00191.jpg",
+        "DSC00192.jpg",
+        "DSC00193.jpg",
+        "DSC00194.jpg",
+        "DSC00195.jpg",
+        "DSC00196.jpg",
+        "DSC00197.jpg",
+        "DSC00198.jpg",
+        "DSC00199.jpg",
+        "DSC00200.jpg",
+        "DSC00201.jpg",
+        "DSC00202.jpg",
+        "DSC00203.jpg",
+        "DSC00205.jpg",
+        "DSC00206.jpg",
+        "DSC00207.jpg",
+        "DSC00208.jpg",
+        "DSC00209.jpg",
+        "DSC00210.jpg",
+        "DSC00211.jpg",
+        "DSC00212.jpg",
+        "DSC00213.jpg",
+        "DSC00214.jpg",
+        "DSC00215.jpg",
+        "DSC00216.jpg",
+        "DSC00217.jpg",
+        "DSC00218.jpg",
+        "DSC00219.jpg",
+        "DSC00220.jpg",
+        "DSC00221.jpg",
+        "DSC00222.jpg",
+        "DSC00223.jpg",
+        "DSC00224.jpg",
+        "DSC00225.jpg",
+        "DSC00226.jpg",
+        "DSC00227.jpg",
+        "DSC00228.jpg",
+        "DSC00229.jpg",
+        "DSC00230.jpg",
+        "DSC00231.jpg",
+        "DSC00234.jpg",
+        "DSC00235.jpg",
+        "DSC00236.jpg",
+        "DSC00237.jpg",
+        "DSC00238.jpg",
+        "DSC00241.jpg"
+      ]
+    };
+let currentGallery = '';
+    let currentLimit = 6;
+    const shuffledGalleries = {};
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function renderGallery(galleryName) {
+      const collageGrid = document.getElementById('collageGrid');
+      collageGrid.innerHTML = '';
+
+      if (!galleries[galleryName]) return;
+
+      // Шафлим только при первом открытии галереи
+      if (!shuffledGalleries[galleryName]) {
+        shuffledGalleries[galleryName] = [...galleries[galleryName]];
+        shuffleArray(shuffledGalleries[galleryName]);
+      }
+
+      const files = shuffledGalleries[galleryName];
+      const visibleFiles = files.slice(0, currentLimit);
+
+      // Создаем элементы изображений
+      visibleFiles.forEach((fileName, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'collage-item';
+        itemDiv.style.animationDelay = `${index * 0.1}s`;
+
+        const img = document.createElement('img');
+        img.src = `images/${galleryName}/${fileName}`; // Проверьте путь!
+        img.alt = `${galleryName} ${fileName}`;
+
+        itemDiv.appendChild(img);
+        collageGrid.appendChild(itemDiv);
+      });
+
+      // Управление кнопкой "Загрузить еще"
+      const loadMoreButton = document.getElementById('loadMore');
+      loadMoreButton.style.display = files.length > currentLimit ? 'block' : 'none';
+    }
+
+    // Обработчики событий
+    document.querySelectorAll('.gallery-buttons button').forEach(button => {
+      button.addEventListener('click', () => {
+        currentGallery = button.dataset.gallery;
+        currentLimit = 6;
+        renderGallery(currentGallery);
+        document.getElementById('collageGrid').style.display = 'grid';
+        document.getElementById('toggleGallery').textContent = 'Скрыть фотографии';
+      });
+    });
+
+    document.getElementById('loadMore').addEventListener('click', () => {
+      currentLimit += 6;
+      renderGallery(currentGallery);
+    });
+
+    document.getElementById('toggleGallery').addEventListener('click', () => {
+      const grid = document.getElementById('collageGrid');
+      const loadMoreButton = document.getElementById('loadMore');
+
+      if (grid.style.display === 'none') {
+        grid.style.display = 'grid';
+        loadMoreButton.style.display =
+          shuffledGalleries[currentGallery]?.length > currentLimit ? 'block' : 'none';
+        document.getElementById('toggleGallery').textContent = 'Скрыть фотографии';
+      } else {
+        grid.style.display = 'none';
+        loadMoreButton.style.display = 'none';
+        document.getElementById('toggleGallery').textContent = 'Показать фотографии';
+      }
+    });
+
+    // Инициализация
+    document.addEventListener('DOMContentLoaded', () => {
+      currentGallery = 'Персонал';
+      renderGallery('Персонал');
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Навигационная панель
+    const navbar = document.getElementById("mainNav");
+    const logo = document.querySelector("#mainNav .navbar-brand img");
+    const heroSection = document.getElementById("heroCarousel");
+    let heroHeight = heroSection.offsetHeight;
+
+    function toggleNavbarStyle() {
+      if (window.scrollY > heroHeight * 0.2) {
+        navbar.classList.add("scrolled");
+        logo.src = "images/header/nav-logo.png";
+      } else {
+        navbar.classList.remove("scrolled");
+        logo.src = "images/header/nav-logo1.png";
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      window.requestAnimationFrame(toggleNavbarStyle);
+    });
+
+    window.addEventListener("resize", () => {
+      heroHeight = heroSection.offsetHeight;
+    });
+
+    toggleNavbarStyle();
+
+    // Обработчик для видео
+   // Обработчик для видео
+  const aboutSection = document.getElementById("about");
+  if (aboutSection) {
+      const mediaWrapper = aboutSection.querySelector('.media-wrapper');
+      const img = mediaWrapper.querySelector('img');
+      const video = mediaWrapper.querySelector('video');
+      let videoStarted = false;
+
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting && !videoStarted) {
+                  videoStarted = true;
+
+                  // Запускаем видео через 5 секунд после появления секции
+                  setTimeout(() => {
+                      video.play().catch(error => {
+                          console.log('Автовоспроизведение запрещено, запускаем вручную');
+                          img.style.display = 'block';
+                          video.controls = true;
+                      });
+                  }, 3000); // 5000 миллисекунд = 5 секунд
+              }
+          });
+      }, { threshold: 0.5 });
+
+      observer.observe(aboutSection);
+  }
+
+    // Анимация чисел
+    function animateNumber(element, start, end, duration) {
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        let progress = Math.min((timestamp - startTime) / duration, 1);
+        element.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNumber(document.getElementById("visitors"), 0, 5000, 2000);
+          animateNumber(document.getElementById("rooms"), 0, 120, 1500);
+          animateNumber(document.getElementById("years"), 0, 30, 1800);
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (document.querySelector(".stats")) {
+      statsObserver.observe(document.querySelector(".stats"));
+    }
+
+    // Обработчики для категорий
+    document.querySelectorAll(".category").forEach(category => {
+      category.classList.add("collapsed");
+    });
+
+    document.querySelectorAll(".category-title").forEach(title => {
+      title.addEventListener("click", function () {
+        this.parentElement.classList.toggle("collapsed");
+      });
+    });
+
+    // Инициализация карусели
+    const carouselElement = document.querySelector('#heroCarousel');
+    if (carouselElement) {
+      const carousel = new bootstrap.Carousel(carouselElement, {
+        interval: 5000,
+        wrap: true
+      });
+    }
+  });
+  </script>
+  <script>
+    function toggleCategory(element) {
+      element.parentElement.classList.toggle("active");
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Найти все категории и изначально свернуть их
+        document.querySelectorAll(".category").forEach(category => {
+            category.classList.add("collapsed");
+        });
+
+        // Добавить обработчик клика на заголовки категорий
+        document.querySelectorAll(".category-title").forEach(title => {
+            title.addEventListener("click", function () {
+                this.parentElement.classList.toggle("collapsed");
+            });
+        });
+    });
+</script>
+<script>
+  document.getElementById("feedback-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Отключаем стандартную отправку формы
+
+    const name = document.getElementById("userName").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+    const message = document.getElementById("userMessage").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Пожалуйста, заполните все поля.");
+      return;
+    }
+
+    const text = `Здравствуйте! Новое сообщение с сайта:\n` +
+                 `Имя: ${name}\n` +
+                 `Email: ${email}\n` +
+                 `Сообщение: ${message}`;
+
+    const phone = "77717750550";
+    const url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+  });
+</script>
+<script>
+  function showRoomDetails(room) {
+    const roomDetails = document.getElementById('room-details');
+    let content = '';
+
+    const details = {
+      standard: {
+        title: 'Стандарт',
+        description: 'Уютный номер с базовыми удобствами для комфортного отдыха. Включает все необходимые удобства для приятного пребывания.',
+        images: ['DSC00202.jpg', 'C91A1062.jpg','DSC00199.jpg']
+      },
+      lux: {
+        title: 'Полулюкс',
+        description: 'Просторный номер с улучшенными условиями и дополнительными удобствами. Идеальный выбор для требовательных гостей.',
+        images: ['DSC00215.jpg', 'C91A1083.jpg', 'C91A1082.jpg']
+      },
+      presidential: {
+        title: 'Люкс',
+        description: 'Эксклюзивный номер с VIP-обслуживанием. Максимальный комфорт и роскошь для особых случаев.',
+        images: ['DSC00183.jpg', 'DSC00189.jpg', 'DSC00190.jpg']
+      }
+    };
+
+    const current = details[room];
+
+    content = `
+      <div class="room-details">
+        <h2>${current.title}</h2>
+        <p>${current.description}</p>
+        <div class="room-collage">
+          ${current.images.map(img => `
+            <img src="images/Номера/${img}" alt="${current.title}">
+          `).join('')}
+        </div>
+      </div>
+    `;
+    roomDetails.innerHTML = content;
+    window.scrollTo({
+      top: roomDetails.offsetTop - 100,
+      behavior: 'smooth'
+    });
+  }
+</script>
+<script>
+  function searchRoom() {
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const guests = document.getElementById("guests").value;
+    const children = document.getElementById("children").value;
+
+    // Проверяем, что даты заполнены
+    if (!checkin) {
+      alert("Пожалуйста, выберите дату заезда.");
+      return;
+    }
+    if (!checkout) {
+      alert("Пожалуйста, выберите дату выезда.");
+      return;
+    }
+
+    // Проверяем что дата выезда не раньше даты заезда
+    if (new Date(checkout) < new Date(checkin)) {
+      alert("Дата выезда не может быть раньше даты заезда.");
+      return;
+    }
+
+    const message = `Здравствуйте! Я хочу забронировать номер:\n` +
+                    `Заезд: ${checkin}\n` +
+                    `Выезд: ${checkout}\n` +
+                    `Взрослых: ${guests}\n` +
+                    `Детей: ${children}`;
+
+    const phone = "77717750550";
+    const url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+  }
+</script>
+<script>
+  document.querySelectorAll('.lang-option').forEach(el => {
+  el.addEventListener('click', () => {
+    const lang = el.dataset.lang;
+    loadLanguage(lang);
+    localStorage.setItem('language', lang);
+  });
+});
+
+function loadLanguage(lang) {
+  fetch(`lang/${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (data[key]) {
+          el.textContent = data[key];
+        }
+      });
+    });
+}
+
+const savedLang = localStorage.getItem('language') || 'ru';
+loadLanguage(savedLang);
+</script>
+</body>
+</html>
