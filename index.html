@@ -1,16 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SAF RESORT & SPA</title>
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/aos@latest/dist/aos.css"
+/> <!-- :contentReference[oaicite:0]{index=0} -->
+
   <link rel="icon" type="image/png" href="images/header/logo.png">
   <style>
-    /* Стили для Header */
+
+
     .navbar {
       font-size: 14px;
       background: rgba(0, 0, 0, 0) !important;
@@ -23,7 +29,7 @@
       background: #fff !important;
       transition: background 0.3s ease;
     }
-
+    
     .category {
             background: white;
             border-radius: 15px;
@@ -129,15 +135,15 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .category {
                 padding: 20px 15px;
             }
-
+            
             h1 {
                 font-size: 1.8rem;
             }
-
+            
             .category-title {
                 font-size: 1.5rem;
             }
@@ -147,7 +153,7 @@
             .service-card {
                 padding: 15px;
             }
-
+            
             .service-name, .service-price {
                 font-size: 1rem;
             }
@@ -227,15 +233,15 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .category {
                 padding: 20px 15px;
             }
-
+            
             h1 {
                 font-size: 1.8rem;
             }
-
+            
             .category-title {
                 font-size: 1.5rem;
             }
@@ -245,7 +251,7 @@
             .service-card {
                 padding: 15px;
             }
-
+            
             .service-name, .service-price {
                 font-size: 1rem;
             }
@@ -273,7 +279,7 @@
     .carousel-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; 
       animation: zoomBackground 30s ease-in-out infinite;
     }
     .carousel-item::before {
@@ -339,7 +345,7 @@
       padding: 10px;
       cursor: pointer;
     }
-
+   
     .carousel-control-btn svg {
       display: block;
       width: 20px;
@@ -349,6 +355,26 @@
       background-color: #fff;
       font-family: 'Arial', sans-serif;
     }
+    .load-more-container {
+  display: flex;            /* делаем flex-контейнер */
+  justify-content: center;  /* центрируем по горизонтали */
+  padding: 1rem 0;          /* отступ сверху/снизу (по необходимости) */
+}
+
+#loadMore {
+  background-color: #4f5b45; /* тёмно-зелёный фон */
+  color: #fff;               /* белый текст */
+  border: none;              /* убираем стандартную рамку */
+  padding: 0.75rem 1.5rem;    /* внутренние отступы */
+  font-size: 1rem;           /* размер шрифта */
+  border-radius: 0.25rem;    /* скругление углов */
+  cursor: pointer;           /* курсор-указатель */
+  transition: background 0.2s ease;
+}
+
+#loadMore:hover {
+  background-color: #3e4838; /* чуть более тёмный при ховере */
+}
     /* СЕКЦИЯ БРОНИРОВАНИЯ */
     .booking-section {
       background-color: #4f5b45; /* Зелёный фон */
@@ -446,36 +472,36 @@
       width: 100%;
       color: #4f5b45; /* Зеленый акцент */
     }
-
+    
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-
+    
     .text-center {
       text-align: center;
     }
-
+    
     .mb-2 { margin-bottom: 20px; }
     .mb-4 { margin-bottom: 40px; }
     .mt-3 { margin-top: 30px; }
     .mt-5 { margin-top: 50px; }
-
+    
     .about-title {
       font-size: 28px;
       font-weight: bold;
       color: #4f5b45;
       margin-bottom: 20px;
     }
-
+    
     .lead {
       font-size: 16px;
       color: #4f5b45;
       opacity: 0.8;
       margin-bottom: 30px;
     }
-
+    
     /* Статистика */
     .stats {
       display: flex;
@@ -490,46 +516,46 @@
       font-weight: bold;
       color: #4f5b45;
     }
-
+    
     .stats p {
       font-size: 16px;
       color: #4f5b45;
       opacity: 0.8;
     }
-
+    
     /* Грид-верстка для контента "Наша Миссия" */
     .row {
       display: flex;
       flex-wrap: wrap;
       margin: -10px;
     }
-
+    
     .col {
       padding: 10px;
     }
-
+    
     .col-6 {
       flex: 0 0 50%;
       max-width: 50%;
     }
-
+    
     .col-12 {
       flex: 0 0 100%;
       max-width: 100%;
     }
-
+    
     /* Стили для медиа-контента */
     .media-wrapper {
       position: relative;
     }
-
+    
     .media-content {
       width: 100%;
       display: block;
       border-radius: 12px;
       margin-bottom: 20px;
     }
-
+    
     /* Оформление текста */
     .about-text {
       font-size: 16px;
@@ -538,14 +564,14 @@
       line-height: 1.6;
       margin-bottom: 20px;
     }
-
+    
     /* Кнопка */
     .btn {
       background-color: #4f5b45;
       color: #ffffff;
       padding: 12px 24px;
       text-decoration: none;
-
+      
       display: inline-block;
       border: none;
       border-radius: 4px;
@@ -553,11 +579,11 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
+    
     .btn:hover {
       background-color: #3c473e;
     }
-
+    
     /* Адаптивность */
     @media (max-width: 768px) {
       .stats {
@@ -717,9 +743,7 @@
       margin: 0 auto;
       padding: 0 20px;
     }
-html {
-  scroll-behavior: smooth;
-}
+
     .rooms-title {
       font-size: 42px;
       font-weight: 700;
@@ -842,13 +866,13 @@ html {
       margin-top: 15px;
     }
 
- .room-collage img {
-  aspect-ratio: 4 / 3;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
-}
+    .room-collage img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
 
     /* Адаптация для планшетов */
     @media (max-width: 1024px) {
@@ -991,9 +1015,9 @@ html {
       }
     }
     .navbar.scrolled .btn-book {
-
+  
   color: #fff !important;
-
+  
 }
 /* Секция процедур */
 .procedures-section {
@@ -1003,7 +1027,7 @@ html {
       border-radius: 8px;
       max-width: 1200px;
       margin: 20px auto;
-
+      
     }
     /* Коллаж изображений */
     .collage2 {
@@ -1046,7 +1070,7 @@ html {
       max-width: 1400px;
       margin: 0 auto;
     }
-
+    
     .section-title {
       color: #333;
       text-align: center;
@@ -1055,7 +1079,7 @@ html {
       text-transform: uppercase;
       letter-spacing: 2px;
     }
-
+    
     .collage-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1063,7 +1087,7 @@ html {
       grid-gap: 15px;
       grid-auto-flow: dense;
     }
-
+    
     .collage-item {
       position: relative;
       overflow: hidden;
@@ -1073,24 +1097,24 @@ html {
       animation: fadeIn 0.5s ease forwards;
       opacity: 0;
     }
-
+    
     .collage-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
       z-index: 2;
     }
-
+    
     .collage-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-
+    
     .collage-item:hover img {
       transform: scale(1.05);
     }
-
+    
     /* Плавный градиент для затемнения нижней части */
     .collage-item::after {
       content: '';
@@ -1102,7 +1126,7 @@ html {
       background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.7) 100%);
       z-index: 1;
     }
-
+    
     /* Разные размеры для элементов */
     .collage-item:nth-child(3n+1) {
       grid-row: span 2;
@@ -1114,7 +1138,7 @@ html {
       grid-row: span 2;
       grid-column: span 2;
     }
-
+    
     @media (max-width: 1024px) {
       .collage-grid {
         grid-auto-rows: 250px;
@@ -1124,7 +1148,7 @@ html {
         grid-column: span 1;
       }
     }
-
+    
     @media (max-width: 768px) {
       .section-title {
         font-size: 2rem;
@@ -1134,7 +1158,7 @@ html {
         grid-gap: 10px;
       }
     }
-
+    
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -1145,7 +1169,7 @@ html {
         transform: translateY(0);
       }
     }
-
+    
     /* Задержки анимации для последовательного появления */
     .collage-item:nth-child(1)  { animation-delay: 0.1s; }
     .collage-item:nth-child(2)  { animation-delay: 0.2s; }
@@ -1162,7 +1186,7 @@ html {
     .collage-item:nth-child(13) { animation-delay: 1.3s; }
     .collage-item:nth-child(14) { animation-delay: 1.4s; }
     .collage-item:nth-child(15) { animation-delay: 1.5s; }
-
+    
     /* Стили для кнопок выбора галереи */
     .gallery-buttons {
       text-align: center;
@@ -1182,40 +1206,12 @@ html {
     .gallery-buttons button:hover {
       background-color: #3d4938;
     }
-
+    
     /* Стили для контейнера кнопки скрытия */
     .toggle-container {
       text-align: center;
       margin-bottom: 2rem;
     }
-   .load-more-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-  }
-
-  #loadMore {
-    background-color: #4f5b45;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  #loadMore:hover {
-    background-color: #63714f;
-    transform: translateY(-2px);
-  }
-
-  #loadMore:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
     .toggle-container button {
       padding: 10px 20px;
       font-size: 1rem;
@@ -1251,20 +1247,28 @@ html {
         font-size: 1rem;
       }
     }
+/* Применяется только при ширине экрана ≤ 767px (смартфоны и небольшие планшеты) */
+@media (max-width: 767px) {
+  html, 
+  body {
+    overflow-x: hidden;    /* скрыть горизонтальный скролл */
+    max-width: 100%;       /* не давать растягиваться шире экрана */
+    height: auto;          /* вернуть авто-высоту (убрать 100%) */
+  }
+}
 
   </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    <meta name="description" content="Санаторий SAF — современный комплекс для восстановления здоровья">
-  <link rel="preload" href="images/nav1.png" as="image">
+  
 </head>
 <body>
-
-
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" data-aos="fade-down">
+  
+  <div class="aos-wrapper">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="" alt="Логотип" style="max-height: 60px;" data-aos="fade-left" data-aos-delay="500">
+      <img src="" alt="Логотип" style="max-height: 60px;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
@@ -1288,7 +1292,7 @@ html {
           <a class="nav-link" href="#gallery" data-i18n="nav.gallery">Фотогалерея</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="margin-bottom: -9px;" data-i18n="nav.phone1">+7 771 775 0550</a>
+          <a class="nav-link" style="margin-top: -5px; margin-bottom: -9px;" data-i18n="nav.phone1">+7 771 775 0550</a>
           <a class="nav-link" data-i18n="nav.phone2">+7 771 775 0770</a>
         </li>
         <li class="nav-item ms-3">
@@ -1309,6 +1313,8 @@ html {
     </div>
   </div>
 </nav>
+  </div>
+  
 
   <!-- Hero секция -->
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -1473,7 +1479,7 @@ html {
 
 <section class="advantages-section" id="advantages">
   <div class="advantages-container">
-    <h2 class="advantages-title" style="font-size: 42px;" data-aos="fade-up" data-i18n="advantages.title">Наши основные преимущества</h2>
+    <h2 class="advantages-title" style="font-size: 40px;" data-aos="fade-up" data-i18n="advantages.title">Наши основные преимущества</h2>
     <div class="advantages-list">
 
       <div class="advantage-item" data-aos="fade-right">
@@ -1818,7 +1824,7 @@ html {
           </div>
       </div>
       <!-- Нижняя часть футера -->
-      <div class="row mt-5 pt-3" style="border-top: 1px solid rgba(255,255,255,0.1);" data-aos="fade-up">
+      <div class="row mt-5 pt-3" style="border-top: 1px solid rgba(255,255,255,0.1);">
           <div class="col-md-6 text-center text-md-start">
               <p class="mb-0" data-i18n="footer.copy">© 2025 Санаторий "SAF". Все права защищены.</p>
           </div>
@@ -1829,7 +1835,11 @@ html {
       </div>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+
+<script
+  src="https://cdn.jsdelivr.net/npm/aos@latest/dist/aos.js"
+></script> 
 <script>
   AOS.init();
 </script>
@@ -1856,10 +1866,10 @@ html {
       function toggleNavbarStyle() {
         if (window.scrollY > heroHeight * 0.2) {
           navbar.classList.add("scrolled");
-          logo.src = "images/nav2.png";
+          logo.src = "images/header/nav-logo.png";
         } else {
           navbar.classList.remove("scrolled");
-          logo.src = "images/nav1.png";
+          logo.src = "images/header/nav-logo1.png";
         }
       }
 
@@ -1875,47 +1885,13 @@ html {
     });
   </script>
   <script>
-    document.getElementById("subscribe-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        var email = document.getElementById("email-input").value;
-
-        if (!email) {
-            alert("Введите корректный email");
-            return;
-        }
-
-        // Замените на вашу Google Forms URL
-        var googleFormUrl = "https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_URL/formResponse";
-
-        // Замените entry.YOUR_ENTRY_ID на реальный ID поля для email
-        var formData = new FormData();
-        formData.append("entry.YOUR_ENTRY_ID", email);
-
-        // Отправка данных в Google Forms
-        fetch(googleFormUrl, {
-            method: "POST",
-            body: formData,
-            mode: "no-cors"
-        }).then(() => {
-            document.getElementById("subscribe-message").style.display = "block";
-            document.getElementById("email-input").value = ""; // Очистка поля
-        }).catch(error => {
-            alert("Ошибка при подписке, попробуйте позже.");
-        });
-    });
-    </script>
-  <script>
     const carouselElement = document.querySelector('#heroCarousel');
     const carousel = new bootstrap.Carousel(carouselElement);
   </script>
 
 
 <script>
-    /*
-      В связи с ограничениями браузера, список изображений приходится задавать вручную.
-      Если файлы добавляются/удаляются, необходимо обновить эти массивы.
-    */
+
     const galleries = {
       "Интерьер": [
         "C91A0723.jpg",
@@ -2528,26 +2504,6 @@ let currentGallery = '';
     const heroSection = document.getElementById("heroCarousel");
     let heroHeight = heroSection.offsetHeight;
 
-    function toggleNavbarStyle() {
-      if (window.scrollY > heroHeight * 0.2) {
-        navbar.classList.add("scrolled");
-        logo.src = "images/header/nav-logo.png";
-      } else {
-        navbar.classList.remove("scrolled");
-        logo.src = "images/header/nav-logo1.png";
-      }
-    }
-
-    window.addEventListener("scroll", () => {
-      window.requestAnimationFrame(toggleNavbarStyle);
-    });
-
-    window.addEventListener("resize", () => {
-      heroHeight = heroSection.offsetHeight;
-    });
-
-    toggleNavbarStyle();
-
     // Обработчик для видео
    // Обработчик для видео
   const aboutSection = document.getElementById("about");
@@ -2714,6 +2670,7 @@ let currentGallery = '';
     });
   }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script>
   function searchRoom() {
     const checkin = document.getElementById("checkin").value;
